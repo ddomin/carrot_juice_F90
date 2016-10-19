@@ -1,20 +1,30 @@
-void plant(int* field, int size, int seed)
-{
-  int i;
-  for(i=0; i < size; i++)
-    field[i] = seed;
-}
+MODULE growing
+  IMPLICIT NONE
+CONTAINS
+  SUBROUTINE plant(field, size, seed)
+    integer, intent(in) :: size, seed
+    integer, dimension(size), intent(inout) :: field
+    integer :: i
+    do i=1, size
+      field(i) = seed
+    end do
+  END SUBROUTINE
 
-void grow(int* field, int size, int growing_factor)
-{
-  int i;
-  for(i=0; i < size; i++)
-    field[i] = field[i]*growing_factor;
-}
+  SUBROUTINE grow(field, size, growing_factor)
+    integer, intent(in) :: size, growing_factor
+    integer, dimension(size), intent(inout) :: field
+    integer :: i
+    do i=1, size
+      field(i) = field(i)*growing_factor;
+    end do
+  END SUBROUTINE
 
-void harvest(int* field,int* carrots, int size)
-{
-  int i;
-  for(i=0; i < size; i++)
-    carrots[i] = field[i];
-}
+  SUBROUTINE harvest(field, carrots, size)
+    integer, intent(in) :: size
+    integer, dimension(size), intent(inout) :: field, carrots
+    integer :: i
+    do i=1, size
+      carrots(i) = field(i)
+    end do
+  END SUBROUTINE
+END MODULE growing
