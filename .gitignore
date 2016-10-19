@@ -2,4 +2,6 @@
 *.so
 a.out
 *.swp
+*.mod
+
 
