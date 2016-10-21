@@ -86,13 +86,27 @@ Setting and fixing issues
 
 Exploring the history
 ---------------------
-1. Try to answer the following questions with git log
-  * Who touched this line from this file
-  * Who modified this part of the reopsitory during a given period
+1. Try to answer the following questions 
+  * Who touched this line from this file ?
+  * Who modified this part of the reopsitory during a given period ?
+  * To which branch does this commit belong ?
   * ...
 
 2. If you managed to answer some questions, show the others how you managed to do it
 
+Stashing modifications
+----------------------
+1. Stash modifications
+  * Modify the local copy of a branch
+  * You can checkout another branch right now => stash your modifications
+  * Checkout the other branch
+  * Modify it and commit
+
+2. Unstash your modifications
+  * Checkout the inital branch again
+  * unstash your modfications
+  * You recover the state you were before
+ 
 Multiple repositories
 ---------------------
 1. Add the project of another group of students as a new remote of your local repository
