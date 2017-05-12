@@ -1,4 +1,5 @@
 MODULE growing
+  use omp_lib
   IMPLICIT NONE
 CONTAINS
   SUBROUTINE plant(field, size, seed)
@@ -23,8 +24,12 @@ CONTAINS
     integer, intent(in) :: size
     integer, dimension(size), intent(inout) :: field, carrots
     integer :: i
+!OMP Parallel
+!OMP DO
     do i=1, size
       carrots(i) = field(i)
     end do
   END SUBROUTINE
+!OMP END DO
+!OMP END PARALLEL
 END MODULE growing
