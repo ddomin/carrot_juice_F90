@@ -1,3 +1,5 @@
+!  mybranch with OMP
+!
 MODULE growing
   use omp_lib
   IMPLICIT NONE
